@@ -74,8 +74,21 @@ console.log(insertAt1([2,5,6,8,14],1,3))
 
 //Remove At
 
+function removeAt(arr, idx) {
+    let removedVal = arr[idx]
+    for (i=0; i<arr.length-1; i++) {
+        arr[idx] = arr[i+1]
+    }
+    arr.length--
+    console.log(arr)
+    return removedVal;
+}
+
+console.log(removeAt([53,215,88,20], 1))
 
 //Swap Pairs
+
+
 
 
 //Remove Duplicates
