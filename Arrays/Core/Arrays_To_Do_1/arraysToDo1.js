@@ -1,4 +1,5 @@
 //Push Front
+
 function pushFront(arr, value) {
     const newArr = [value, ...arr]
     return newArr
@@ -51,7 +52,6 @@ console.log(popFront([0,5,10,15]));
 console.log(popFront1([0,5,10,15]));
 console.log(popFront2([0,5,10,15]));
 
-
 //Insert At
 
 function insertAt (arr, index, value) {
@@ -88,7 +88,28 @@ console.log(removeAt([53,215,88,20], 1))
 
 //Swap Pairs
 
+function swapPairs(arr) {
+    var lastIdx = arr.length % 2 === 0 ? arr.length : arr.length-1
+    for (var i=0; i< lastIdx; i+=2){
+        let temp = arr[i]
+        arr[i] = arr[i+1]
+        arr[i+1] = temp
+    }
+    return arr
+}
 
-
+console.log(swapPairs(["Brendan",true,42]))
 
 //Remove Duplicates
+
+function removeDupes(arr) {
+    newArr = []
+    for(i=0;i<arr.length;i++){
+        if(arr[i] !== arr[i+1]){
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
+}
+
+console.log(removeDupes([-2,-2,3.14,5,5,10]))
