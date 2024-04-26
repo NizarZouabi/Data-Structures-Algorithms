@@ -72,3 +72,24 @@ function removeShorterStrings(arr, val) {
 
 console.log(removeShorterStrings(['Good morning', 'sunshine', 'the', 'Earth', 'says', 'hello'], 4))
 console.log(removeShorterStrings(['There', 'is', 'a', 'bug', 'in', 'the', 'system'], 3))
+
+//Is Palindrome
+
+const isPalindrome = (str) => {
+    let isPal = str.split("")
+    let j = isPal.length-1
+    for(i=0;i<isPal.length;i++){
+        if(isPal[i] !== isPal[j]){
+            return false
+        }
+        j--
+    }
+    return true
+}
+
+console.log(isPalindrome("tacocat"))
+console.log(isPalindrome("marcedes"))
+console.log(isPalindrome("neolloen"))
+console.log(isPalindrome("nah"))
+
+
