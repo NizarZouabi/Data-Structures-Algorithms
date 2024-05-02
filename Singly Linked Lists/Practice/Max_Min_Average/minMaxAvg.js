@@ -49,19 +49,30 @@ class LinkedList {
 
     avg(){
         let current = this.head
-        let avg = this.head.data
-        let min = this.min()
-        let max = this.max()
-        while(current && current !== null){
-            if(current.data > min && current.data < max){
-                avg = current.data
-            }
+        let length = 0
+        let sum = 0
+        while(current !== null){
+            length ++
+            sum += current.data
             current = current.next
         }
+        let avg = sum/length
         return avg
     }
 
-
+    // avg(){
+    //     let current = this.head
+    //     let avg = this.head.data
+    //     let min = this.min()
+    //     let max = this.max()
+    //     while(current !== null){
+    //         if(current.data > min && current.data < max){
+    //             avg = current.data
+    //         }
+    //         current = current.next
+    //     }
+    //     return avg
+    // }
 
 }
 
