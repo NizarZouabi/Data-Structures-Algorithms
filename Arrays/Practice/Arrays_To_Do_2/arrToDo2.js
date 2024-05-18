@@ -32,44 +32,37 @@ const rotateArr = (arr, shiftBy) => {
     return arr
 }
 
-// const rotateArr = (arr, shiftBy) => {
-//     const n = arr.length;
- // Normalize shiftBy to positive equivalent within array length
-//     shiftBy = ((shiftBy % n) + n) % n;
-    
- // No need to rotate if shiftBy is 0 or array length is 0 or 1
-//     if (shiftBy === 0 || n <= 1) return arr;
-
- // Temporary array to hold rotated elements
-//     const rotated = [];
-
- // Perform rotation by shifting elements manually
-//     for (let i = 0; i < n; i++) {
-//         const newIndex = (i + shiftBy) % n;
-//         rotated[newIndex] = arr[i];
-//     }
-
-//     return rotated;
-// }
-
 console.log(rotateArr([1,2,3],1))
 
 //Filter Range
 
 const filterRange = (arr, min, max) => {
-    let idx = 0
-    for (let i=0;i<=arr.length-1;i++){
-        if(arr[i] >= min && arr[i] <= max){
-            arr[idx] = arr[i]
-            idx++
+    for(i=0;i<=arr.length-1;i++){
+        if(arr[i] < min || arr[i] > max){
+            for(let j=i;j<arr.length-1;j++){
+                arr[j] = arr[j+1]
+            }
+            arr.length--
+            i--
         }
     }
-    arr.length = idx
     return arr
 }
 
 
-console.log(filterRange([24,11,65,32,88,14,90], 11, 88))
-
+console.log(filterRange([24,11,65,32,88,14,90], 11, 32))
 
 //Concat
+
+const concat = (arr1, arr2) => {
+    let newArr = []
+    for(i=0;i<=arr1.length-1;i++){
+        newArr.push(arr1[i])
+    }
+    for(j=0;j<=arr2.length-1;j++){
+        newArr.push(arr2[j])
+    }
+    return newArr
+}
+
+console.log(concat(["hello","world,",20],[24,"is","the","year!"]))
