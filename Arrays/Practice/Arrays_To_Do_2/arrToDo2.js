@@ -49,7 +49,6 @@ const filterRange = (arr, min, max) => {
     return arr
 }
 
-
 console.log(filterRange([24,11,65,32,88,14,90], 11, 32))
 
 //Concat
