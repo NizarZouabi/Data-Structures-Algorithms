@@ -122,9 +122,20 @@ incTheSec([1,2,3,4,5,6])
 
 // Previous Lengths
 
+function prevLen(arr){
+    strLen = 0
+    for(let i=0;i<arr.length;i++){
+        strLen = arr[i].length
+        arr[i-1] = strLen
+    }
+    console.log(arr)
+}
 
+prevLen(["string","number","object","boolean","variable"])
 
 // Add Seven to Most
+
+
 
 // Reverse Array
 
