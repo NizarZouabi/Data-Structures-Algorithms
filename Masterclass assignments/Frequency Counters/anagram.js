@@ -27,7 +27,6 @@ const validAnagram = (str1, str2) => {
     return true
 }
 
-//no numbers, no spacing, only lowercase
 console.log(validAnagram('','')) //true
 console.log(validAnagram('Anagram','Nagrama')) //true
 console.log(validAnagram('rat','car')) //false
