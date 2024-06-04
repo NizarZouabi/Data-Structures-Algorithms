@@ -46,7 +46,6 @@ class SLL {
 
 
 }
-
 let sll = new SLL()
 sll.addFront(18)
 sll.addFront(5)
