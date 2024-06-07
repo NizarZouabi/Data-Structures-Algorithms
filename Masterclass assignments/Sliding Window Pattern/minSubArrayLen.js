@@ -1,17 +1,19 @@
 function minSubArrayLen(arr,num){
     let minLen = Infinity
-    let i = 0
+    let start = 0
     let sum = 0
 
-    for(let x=0;x<arr.length;x++){
-        sum += arr[x]
+    for(let end=0;end<arr.length;end++){
+        sum += arr[end]
         while(sum >= num){
-            minLen = Math.min(minLen, x - i+1)
-            sum -= arr[i++]
+            if(end-start+1 < minLen){
+                minLen = end-start+1
+            }
+            sum -= arr[start++]
         }
     }
 
-    console.log(minLen === Infinity ? 0 : minLen)
+    return minLen === Infinity ? 0 : minLen
 }
 
 minSubArrayLen([2,3,1,2,4,3], 7) // 2 -> because [4,3] is the smallest subarray
