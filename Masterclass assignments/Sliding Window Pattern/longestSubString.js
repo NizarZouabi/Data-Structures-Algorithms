@@ -1,18 +1,17 @@
 const findLongestSubstring = (str) => {
     let longest = 0
     let start = 0
-    let seen = new Set()
+    let strArr = []
 
-    for(let end=0; end<str.length; end++){
-        while(seen.has(str[end])){
-            seen.delete(str[start])
+    for(let end=0; end < str.length; end++){
+        while(strArr.includes(str[end])){
+            strArr.shift()
             start++
         }
-        seen.add(str[end])
+        strArr.push(str[end])
         longest = Math.max(longest, end-start+1)
     }
-    
-    console.log(longest);
+    console.log(longest)
 }
 
 findLongestSubstring('') // 0
