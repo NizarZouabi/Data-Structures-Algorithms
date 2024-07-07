@@ -5,7 +5,7 @@ function someRecursive(arr, cb){
     if(cb(arr[0])){
         return console.log(true)
     }
-
+    
     return someRecursive(arr.slice(1), cb)
 }
 
