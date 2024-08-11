@@ -51,18 +51,46 @@ secondLargest([42,1,4,Math.PI,7])
 
 // Nth-to-Last
 
-function nthToLast(){
+function nthToLast(arr, n){
+    if(n > arr.length || n < 2) return null
 
+    return console.log(arr[arr.length-n])
 }
+
+nthToLast([5,2,3,6,4,9,7], 3)
 
 // Nth-Largest
 
-function nthLargest(){
+function nthLargest(arr, n){
+    if(n > arr.length || n < 2) return null
 
+    let compFunc = (a, b) => b - a
+
+    sortedArr = arr.sort(compFunc)
+
+    return console.log(sortedArr[n-1])
 }
+
+nthLargest([5,2,3,6,4,8,12], 3)
 
 // Skyline Heights
 
-function skyLineHeights(){
+function skyLineHeights(arr){
 
+    let tallest = -Infinity
+    let newArr = []
+
+    if(arr.length < 1) return null
+
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] > 0 && arr[i] > tallest){
+            tallest = arr[i]
+            newArr.push(tallest)
+        }
+    }
+
+    return newArr
 }
+
+console.log(skyLineHeights([-1,1,1,7,3])) // [1,7]
+console.log(skyLineHeights([0,4])) // [4]
