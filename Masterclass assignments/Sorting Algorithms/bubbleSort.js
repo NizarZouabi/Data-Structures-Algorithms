@@ -1,6 +1,5 @@
 function bubbleSort(arr){
     for(i=arr.length-1; i>=0; i--){
-        let j = 0
         for(j=0; j<=i-1; j++){
             if(arr[j] > arr[j+1]){
                 let swapper = arr[j]
