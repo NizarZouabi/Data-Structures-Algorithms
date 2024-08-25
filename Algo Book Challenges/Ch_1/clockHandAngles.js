@@ -1,0 +1,5 @@
+function clockHand(seconds){
+    
+}
+
+clockHand()

@@ -1,10 +1,12 @@
 function sigma(num) {
     let sum = 0
-    for(i=num; i>0; i--){
+
+    for(i=0; i<=num; i++){
         sum += i
     }
+    
     return sum
 }
 
-console.log(sigma(3)) //6
+console.log(sigma(2.5)) //3
 console.log(sigma(6)) //21
