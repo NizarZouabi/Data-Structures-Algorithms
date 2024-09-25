@@ -14,21 +14,21 @@ console.log(reverse([5,8,9,2,4,3]))
 //Rotate
 
 const rotateArr = (arr, shiftBy) => {
-    let first = arr[0]
-    let last = arr[arr.length-1]
-    if(shiftBy <= 0) {
-        for(let i=arr.length-1;i>=0;i--){
-            let temp = arr[i]
-            arr[i] = first
-            first = temp
-        }
-    } else if (shiftBy > 0) {
-        for(let i=0;i<arr.length;i++){
-            let temp = arr[i]
-            arr[i] = last
-            last = temp
-        }
-    }
+    shiftBy = shiftBy % arr.length
+
+    function r(left, right){
+        while(left < right){
+        [arr[left], arr[right]] = [arr[right], arr[left]]
+        left++
+        right--
+    }}
+    
+    r(0, arr.length-1)
+    
+    r(0, shiftBy -1)
+
+    r(shiftBy, arr.length-1)
+
     return arr
 }
 
