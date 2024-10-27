@@ -1,11 +1,23 @@
 const rotateArr = (arr, shiftBy) => {
-    let i = 0
+    if(shiftBy === 0) return arr
     let rotatedArr = []
 
-    while(i <= arr.length-1){
-        rotatedArr.push(arr[(i + shiftBy) % arr.length])
+    if(shiftBy < 0){
+        let i = arr.length-1
 
-        i++
+        while(i >= 0){
+            rotatedArr.push(arr[(i- shiftBy) % arr.length])
+    
+            i--
+        }
+    } else {
+        let i = 0
+
+        while(i <= arr.length-1){
+            rotatedArr.push(arr[(i+ shiftBy) % arr.length])
+    
+            i++
+        }
     }
 
     return rotatedArr

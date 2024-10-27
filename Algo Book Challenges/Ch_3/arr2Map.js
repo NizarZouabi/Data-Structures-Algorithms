@@ -1,4 +1,4 @@
-function arr1Map(arr1, arr2){
+function arr2Map(arr1, arr2){
     let res = {}
 
     for(i in arr1){
@@ -8,4 +8,4 @@ function arr1Map(arr1, arr2){
     return res
 }
 
-console.log(arr1Map(["keyOne","keyTwo","keyThree"],[1,2,3]))
+console.log(arr2Map(["keyOne","keyTwo","keyThree"],[1,2,3]))
